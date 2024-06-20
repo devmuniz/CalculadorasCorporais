@@ -71,26 +71,10 @@ document.addEventListener('keydown', (event) => {
     }
 })
 
-document.addEventListener('touchmove', function(event) {
-    if (event.touches.length > 1 || event.changedTouches[0].screenX !== event.changedTouches[0].clientX) {
-        event.preventDefault();
-    }
-}, { passive: false });
 
 
-function handleTouch(event) {
-    if (event.touches.length > 1) {
-        event.preventDefault();
-    }
-}
 
-document.addEventListener('touchstart', handleTouch, { passive: false });
 
-function handleScroll(event) {
-    event.preventDefault();
-}
-
-document.addEventListener('touchmove', handleScroll, { passive: false });
 
 
 

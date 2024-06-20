@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow: hidden;
+}
+
 /*IMC
 **************************/
 
@@ -539,6 +543,10 @@ Responsividade Index
 
 @media (max-width: 400px) {
 
+    html, body {
+        overflow: hidden;
+    }
+
     #faixa {
         position: absolute;
         width: 200vh;
@@ -549,13 +557,18 @@ Responsividade Index
     #bodyIndex {
         position: absolute;
         z-index: 1;
-        margin-top: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
     }
 
     #sectionIndex {
         margin-left: 350px;
         position: absolute;
         width: 1000px;
+        margin-right: 350px;
     }
 
     .fundo3 {
