@@ -77,3 +77,19 @@ document.addEventListener('touchmove', function(event) {
     }
 }, { passive: false });
 
+
+function handleTouch(event) {
+    event.preventDefault();
+}
+
+
+document.addEventListener('touchstart', handleTouch, { passive: false });
+
+
+function handleScroll(event) {
+    event.preventDefault();
+}
+
+document.addEventListener('touchmove', handleScroll, { passive: false });
+
+

@@ -372,13 +372,14 @@ Index */
 
 #bodyIndex {
     background-color: black;
+    overflow: hidden;
 }
 
 .fundo {
     position: relative;
     height: auto;
     width: 100%;
-    opacity: 40%;
+    opacity: 80%;
     z-index: 0;
 }
 
@@ -537,6 +538,19 @@ Responsividade Index
 */
 
 @media (max-width: 400px) {
+
+    .fundo3 {
+        opacity: 70%;
+        margin-right: 30%;
+        width: 1200px;
+        margin-bottom: 00px;
+    }
+
+    .fundo2 {
+        width: 500px;
+        opacity: 100%;
+    }
+
     #sectionIndex h1 {
         font-size: 1em;
     }
@@ -554,7 +568,12 @@ Responsividade Index
 
 }
 
-@media (min-width:400px) and (max-width: 600px) {
+@media (min-width:400px) {
+
+    .fundo2, .fundo3 {
+        display: none;
+    }
+
     #sectionIndex h1 {
         font-size: 1.4em;
     }
