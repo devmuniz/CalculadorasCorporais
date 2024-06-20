@@ -583,10 +583,6 @@ Responsividade Index
         height: 50px;
         font-size: 0.6em;
     }
-
-    #IMCbtn:hover, #TMBbtn:hover {
-        font-size: 0.1em;
-    }
 }
 
 @media (max-width: 400px) {

@@ -79,17 +79,18 @@ document.addEventListener('touchmove', function(event) {
 
 
 function handleTouch(event) {
-    event.preventDefault();
+    if (event.touches.length > 1) {
+        event.preventDefault();
+    }
 }
 
-
 document.addEventListener('touchstart', handleTouch, { passive: false });
-
 
 function handleScroll(event) {
     event.preventDefault();
 }
 
 document.addEventListener('touchmove', handleScroll, { passive: false });
+
 
 
