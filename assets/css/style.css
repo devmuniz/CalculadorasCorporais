@@ -1,0 +1,589 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*IMC
+**************************/
+
+body {
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    overflow: hidden;
+    background-color: black;
+}
+
+.conteudo {
+position: absolute;
+z-index: 1;
+}
+
+.fundoIMC {
+    position: absolute;
+    z-index: 0;
+    opacity: 15%;
+}
+
+.capa {
+    position: absolute;
+    margin-right: 45%;
+    z-index: 2;
+}
+
+.box {
+    background-color: rgb(51, 51, 51);
+    width: 400px;
+    height: 550px;
+    margin-left: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    border-radius: 15px;
+    color: white;
+    padding: 40px 30px;
+}
+
+.box h1 {
+    margin-right: auto;
+    font-size: 2em;
+}
+
+.hrCalc {
+    height: 2px;
+    width: 100px;
+    background-color: rgb(223, 15, 178);
+    margin-right: 65%;
+}
+
+.formKG {
+    margin-top: 10%;
+    width: 100%;
+}
+
+.inputKG {
+    display: flex;
+    margin-right: 0%;
+}
+
+.inputKG input {
+    background-color: rgb(78, 78, 78);
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    padding: 0 0 0 50px;
+    color: white;
+    margin-top: 10px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.inputKG input:focus {
+    outline: 2px solid;
+    outline-color: rgba(223, 15, 178, 0.7);
+}
+
+.inputKG span{
+    color: rgba(255, 255, 255, 0.5);
+    margin-right: 10px;
+    position: absolute;
+    align-self:center;
+    margin-top: 12px;
+    margin-left: 300px;
+}
+
+.icon {
+    align-self: center;
+    margin-left: 10px;
+    position: absolute;
+    padding: 2px;
+    margin-top: 10px;
+}
+
+.labelKG {
+    margin-top: 10%;
+}
+
+#btnCalc {
+    width: 100%;
+    height: 35px;
+    background-color: rgb(223, 15, 178);
+    margin-top: 8%;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#btnCalc:hover {
+    background-color: rgb(180, 6, 143);
+    transition: 0.4s;
+    transform: scale(1.02);
+}
+
+#campoResultado {
+    display: none;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+
+#resultado {
+    font-size: 3em;
+    margin-left: -40%;
+}
+
+.linha {
+    width: 1px;
+    height: 80px;
+    margin-left: 15%;
+    background-color: rgb(223, 15, 178);
+}
+
+.classificadoTitulo {
+    font-size: 0.95em;
+    position: absolute;
+    margin-left: 24%;
+    margin-bottom: 4%;
+}
+
+.classificacao {
+    margin-left: 24%;
+    position: absolute;
+    font-size: 0.9em;
+    margin-top: 1%;
+}
+
+/*TMB
+**************************/
+.boxTMB {
+    background-color: rgb(51, 51, 51);
+    width: 600px;
+    height: 610px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    color: white;
+    padding: 40px 30px;
+    align-self: center;
+}
+
+.inputKGTMB span{
+    color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    align-self:center;
+    margin-top: 12px;
+    margin-left: 400px;
+}
+
+.inputKGTMB {
+    display: flex;
+    margin-right: 0%;
+}
+
+.inputKGTMB input {
+    background-color: rgb(78, 78, 78);
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    padding: 0 0 0 50px;
+    color: white;
+    margin-top: 10px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.inputKGTMB input::-webkit-inner-spin-button,
+.inputKGTMB input::-webkit-outer-spin-button {
+    appearance: none;
+}
+
+
+.inputKGTMB input:focus {
+    outline: 2px solid;
+    outline-color: rgba(223, 15, 178, 0.7);
+}
+
+.formKGTMB {
+    margin-top: 2%;
+    width: 80%;
+}
+
+#btnCalcTMB {
+    width: 80%;
+    height: 45px;
+    background-color: rgb(223, 15, 178);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#btnCalcTMB:hover {
+    background-color: rgb(180, 6, 143);
+    transition: 0.4s;
+    transform: scale(1.02);
+}
+
+.spanAnos {
+    margin-left: 385px !important;
+}
+
+.inputSexo input {
+    display: none;
+}
+
+.inputSexo input + label:before {
+content: '';
+width: 24px;
+height: 24px;
+border-radius: 50px;
+background-color:rgb(78, 78, 78);
+border: none;
+display: inline-block;
+vertical-align: middle;
+margin-bottom: 35px;
+margin-left: 90px;
+margin-top: 30px;
+margin-right: 5px;
+}
+
+.inputSexo input:checked + label:before {
+    background-color: rgba(223, 15, 178, 0.7);
+    box-sizing: border-box;
+    border: 6px solid rgb(78, 78, 78);
+}
+
+select {
+    background-color: rgb(78, 78, 78);
+    border: none;
+    color: white;
+    height: 30px;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+select:focus {
+outline: 2px solid rgba(223, 15, 178, 0.7);
+}
+
+/**********************************************
+Resultados TMB */
+
+.boxTMB h1 {
+    font-size: 1.6em;
+}
+
+.tituloTaxa, .tituloGasto {
+    font-size: 1.6em;
+}
+
+.tituloGasto {
+    margin-top: 50px;
+}
+
+
+#taxaMB, #taxaGasto {
+    font-size: 4em;
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+#campoResultadoTMB {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#voltarBtn {
+    width: 30%;
+    height: 45px;
+    background-color: rgb(223, 15, 178);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#voltarBtn:hover {
+    background-color: rgb(180, 6, 143);
+    transition: 0.4s;
+    transform: scale(1.06);
+}
+
+#voltarBtn button {
+    background: none;
+    border: none;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#btnHomeTMB {
+    position: absolute;
+    margin-left: 500px;
+    background-color: rgba(223, 15, 178, 0.7);
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: -5px;
+}
+
+#btnHomeTMB button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#btnHomeTMB:hover {
+    cursor: pointer;
+    background-color: rgb(173, 171, 173);
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+/***********************
+Index */
+
+#bodyIndex {
+    background-color: black;
+}
+
+.fundo {
+    position: relative;
+    height: auto;
+    width: 100%;
+    opacity: 40%;
+    z-index: 0;
+}
+
+#sectionIndex h1 {
+ color: white;
+ margin-top: 80px;
+ font-size: 2em;
+}
+
+#sectionIndex {
+    margin-bottom: 100px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 300px;
+}
+
+#faixa {
+position: absolute;
+width: 100%;
+height: 200px;
+background-color: rgba(0, 0, 0, 0.7);
+}
+
+a {
+    height: 40px;
+}
+
+#TMBbtn, #IMCbtn {
+    background-color: rgba(223, 15, 178, 0.7);
+    border: none;
+    height: 40px;
+    margin-top: 30px;
+    border-radius: 8px;
+    padding: 0px 20px 0px 20px;
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+#TMBbtn:hover, #IMCbtn:hover {
+    cursor: pointer;
+    background-color: rgb(180, 6, 143);
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+#btnHome {
+    position: absolute;
+    margin-left: 300px;
+    background-color: rgba(223, 15, 178, 0.7);
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#btnHome button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#btnHome:hover {
+    cursor: pointer;
+    background-color: rgb(143, 4, 113);
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+
+/********************************************
+Responsividade IMC*/
+@media (max-width: 400px) {
+    
+    .capa {
+        display: none;
+    }
+
+    .box {
+        margin-top: 200px;
+        margin-right: 400px;
+        width: 300px;
+    }
+
+    .inputKG span{
+        margin-left: 200px;
+    }
+
+    #btnHome {
+        margin-left: 210px;
+    }
+
+    .box h1 {
+        font-size: 1.5em;
+    }
+
+    .classificadoTitulo {
+        font-size: 0.7em;
+        margin-left: 14%;
+    }
+
+    .classificacao {
+     margin-left: 14%;
+     font-size: 0.6em;
+    }
+}
+
+
+@media (min-width: 400px) and (max-width: 600px) {
+    .capa {
+        display: none;
+    }
+
+    .box {
+        margin-top: 200px;
+      margin-right: 380px;
+    }
+
+    .classificadoTitulo {
+        margin-left: 14%;
+    }
+
+    .classificacao {
+     margin-left: 14%;
+    }
+
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+    .capa {
+        display: none;
+    }
+
+    .box {
+        margin-right: 400px;
+      }
+
+      .classificadoTitulo {
+        margin-left: 14%;
+    }
+
+    .classificacao {
+     margin-left: 14%;
+    }
+} 
+
+/***********************
+Responsividade Index
+*/
+
+@media (max-width: 400px) {
+    #sectionIndex h1 {
+        font-size: 1em;
+    }
+
+    #IMCbtn, #TMBbtn {
+        width: 120px;
+        height: 50px;
+        font-size: 0.6em;
+    }
+
+    #IMCbtn:hover, #TMBbtn:hover {
+        font-size: 0.1em;
+    }
+
+
+}
+
+@media (min-width:400px) and (max-width: 600px) {
+    #sectionIndex h1 {
+        font-size: 1.4em;
+    }
+
+    #IMCbtn, #TMBbtn {
+        width: 120px;
+        height: 50px;
+        font-size: 0.6em;
+    }
+
+    #IMCbtn:hover, #TMBbtn:hover {
+        font-size: 0.1em;
+    }
+}
+
+@media (max-width: 400px) {
+    .boxTMB {
+        margin-left:300px;
+        margin-top: 500px;
+    }
+}
+
+@media (min-width:400px) and (max-width: 600px) {
+    .boxTMB {
+        margin-left:300px;
+        margin-top: 500px;
+    }
+}
+
+
+
+

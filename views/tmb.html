@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora TMB</title>
+    <link rel="icon" href="../img/icon.png">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+</head>
+<body>
+    
+    <section class="conteudo">
+        <section class="boxTMB">
+            <h1>Calculadora - Taxa Metabólica Basal</h1>
+            <a href="index.html" id="btnHomeTMB"><button type="button"><i class="fa-solid fa-xl fa-house" style="color: white;"></i></button></a>
+            <form class="formKGTMB">                              
+                <label for="kg" class="labelKG">Seu peso em KG</label>
+                <div class="inputKGTMB"> 
+                <i class="fa-solid fa-weight-hanging icon fa-lg"></i>
+                <input type="number" id="pesoTMB" autofocus placeholder="Ex: 64">
+                <span>KG</span>
+                </div> 
+            </form>      
+            <form class="formKGTMB">                              
+                <label for="cm" class="labelKG">Sua altura em centímetros</label>
+                <div class="inputKGTMB"> 
+                <i class="fa-solid fa-ruler icon fa-lg"></i>
+                <input type="number" id="alturaTMB" placeholder="Ex: 179">
+                <span>CM</span>
+                </div>
+            </form>
+            
+            <form class="formKGTMB">                              
+                <label for="cm" class="labelKG">Sua idade</label>
+                <div class="inputKGTMB"> 
+                <i class="fa-solid fa-calendar icon fa-lg"></i>
+                <input type="number" id="idade" placeholder="Ex: 30">
+                <span class="spanAnos">ANOS</span>
+                </div>
+            </form> 
+
+            <form class="formKGTMB"> 
+                <label for="frequencia" class="labelKG">Qual a frequência que você pratica atividades físicas?</label>                             
+                <select name="atividades" id="frequencia">
+                    <option value="leve">Leve - Atividades domésticas básicas</option>
+                    <option value="moderada">Moderada - 1hr de corrida diária, dança, ciclismo, trabalhos braçais, etc.</option>
+                    <option value="intensa">Intensa - 2hrs ou + de corrida diária, dança, ciclismo, esportes, etc.</option>
+                </select>
+            </form> 
+
+            <form class="formKGTMB">                              
+                <label for="sexo" class="labelSexo">Qual seu sexo?</label>
+                <div class="inputSexo"> 
+                <input type="radio" name="sexo" id="sxmasc" value="homem"><label class="labelSx" for="sxmasc">Masculino</label>
+                <input type="radio" name="sexo" id="sxfem" value="mulher"><label for="sxfem">Feminino</label>
+                </div>
+            </form> 
+
+            <button type="button" id="btnCalcTMB" onclick="calcularTmb()">Calcular</button>
+            
+            
+            </section>
+
+        
+
+
+    </section>
+
+    <img src="../img/textura.jpg" alt="" class="fundoIMC">
+
+<script src="../assets/js/scriptTMB.js"></script>
+<script src="https://kit.fontawesome.com/8f8b595eba.js" crossorigin="anonymous"></script>    
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+    <link rel="icon" href="../img/icon.png">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+</head>
+<body>
+    
+    
+    <img src="../img/gym.png" alt="" class="capa" width="500px">
+    
+    
+    <section  class="conteudo">
+        <section class="box">
+            <h1>Calculadora - IMC</h1>
+            <a href="index.html" id="btnHome"><button type="button"><i class="fa-solid fa-xl fa-house" style="color: white;"></i></button></a>
+            <span class="hrCalc"></span>
+            <form class="formKG">                              
+                <label for="kg" class="labelKG">Seu peso em KG</label>
+                <div class="inputKG"> 
+                <i class="fa-solid fa-weight-hanging icon fa-lg"></i>
+                <input type="text" id="peso" autofocus placeholder="Ex: 64">
+                <span>KG</span>
+                </div> 
+            </form>      
+            <form class="formKG">                              
+                <label for="cm" class="labelKG">Sua altura em centímetros</label>
+                <div class="inputKG"> 
+                <i class="fa-solid fa-ruler icon fa-lg"></i>
+                <input type="text" id="altura" placeholder="Ex: 179">
+                <span>CM</span>
+                </div>
+
+                <button type="button" id="btnCalc" onclick="calcular()">Calcular</button>
+            </form>      
+            
+            <div id="campoResultado">
+            <span id="resultado">20.50</span>
+            <span class="linha"></span>
+            <h4 class="classificadoTitulo">Classificado como:</h4>
+            <p class="classificacao"></p>
+            </div>
+            
+
+        </section>
+
+        
+    </section>
+
+    <img src="../img/textura.jpg" alt="" class="fundoIMC">
+
+<script src="../assets/js/scriptIMC.js"></script>
+<script src="https://kit.fontawesome.com/8f8b595eba.js" crossorigin="anonymous"></script>    
+</body>
+</html>

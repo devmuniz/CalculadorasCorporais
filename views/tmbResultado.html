@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora TMB</title>
+    <link rel="icon" href="../img/icon.png">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+</head>
+<body>
+    
+    <section class="conteudo">
+        <section class="boxTMB">
+
+            <section id="campoResultadoTMB">
+            <h1 class="tituloTaxa">Taxa Metabólica Basal</h1>
+            <span id="taxaMB"></span>
+
+            <h1 class="tituloGasto">Gasto calórico diário</h1>
+            <span id="taxaGasto"></span>
+            </section>
+
+            <a href="index.html" id="voltarBtn"><button type="button">Voltar ao Início</button></a>
+
+            </section>
+
+        
+
+
+    </section>
+
+    <img src="../img/textura.jpg"  class="fundo" alt="">
+
+<script src="../assets/js/scriptTMB.js"></script>
+<script>
+        
+    var resultado = localStorage.getItem('resultado');
+    var gasto = localStorage.getItem('gasto');
+
+    document.getElementById('taxaMB').textContent = resultado;
+    document.getElementById('taxaGasto').textContent = gasto;
+
+    </script>
+</body>
+</html>
