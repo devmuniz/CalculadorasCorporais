@@ -539,16 +539,39 @@ Responsividade Index
 
 @media (max-width: 400px) {
 
+    #faixa {
+        position: absolute;
+        width: 200vh;
+        background-color: rgba(61, 61, 61, 0.3);
+        z-index: 2;
+        }
+
+    #bodyIndex {
+        position: absolute;
+        z-index: 1;
+        margin-top: 300px;
+    }
+
+    #sectionIndex {
+        margin-left: 350px;
+        position: absolute;
+        border: 1px solid red;
+        width: 1000px;
+    }
+
     .fundo3 {
         opacity: 70%;
+        position: absolute;
         margin-right: 30%;
         width: 1200px;
-        margin-bottom: 00px;
+        z-index: 0;
     }
 
     .fundo2 {
         width: 500px;
+        position: absolute;
         opacity: 100%;
+        z-index: 0;
     }
 
     #sectionIndex h1 {
@@ -582,6 +605,10 @@ Responsividade Index
         width: 120px;
         height: 50px;
         font-size: 0.6em;
+    }
+
+    #IMCbtn:hover, #TMBbtn:hover {
+        font-size: 0.5em;
     }
 }
 
