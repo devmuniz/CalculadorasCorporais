@@ -465,14 +465,28 @@ a {
 Responsividade IMC*/
 @media (max-width: 400px) {
     
-    .capa {
-        display: none;
+
+    html, body {
+        overflow: hidden;
     }
 
+    #bodyIMC {
+       overflow: hidden;
+       height: 750px;
+       width: 100%;
+    }
+
+    .fundoIMC {
+        opacity: 30%;
+    }  
     .box {
-        margin-top: 200px;
-        margin-right: 400px;
         width: 300px;
+        margin-top: 30px;
+        margin-right: 500px;
+    }
+
+    .capa {
+        display: none;
     }
 
     .inputKG span{
@@ -500,21 +514,49 @@ Responsividade IMC*/
 
 
 @media (min-width: 400px) and (max-width: 600px) {
+    html, body {
+        overflow: hidden;
+    }
+
+    #bodyIMC {
+       overflow: hidden;
+       height: 750px;
+       width: 100%;
+    }
+
+    .fundoIMC {
+        opacity: 30%;
+    }  
+    .box {
+        width: 300px;
+        margin-top: 30px;
+        margin-right: 500px;
+    }
+
     .capa {
         display: none;
     }
 
-    .box {
-        margin-top: 200px;
-      margin-right: 380px;
+    .inputKG span{
+        margin-left: 200px;
+    }
+
+    #btnHome {
+        margin-left: 210px;
+    }
+
+    .box h1 {
+        font-size: 1.5em;
     }
 
     .classificadoTitulo {
+        font-size: 0.7em;
         margin-left: 14%;
     }
 
     .classificacao {
      margin-left: 14%;
+     font-size: 0.6em;
     }
 
 }
@@ -562,7 +604,6 @@ Responsividade Index
         align-items: center;
         height: 100%;
         width: 100%;
-        border: 1px solid red;
     }
 
     #sectionIndex {
@@ -599,7 +640,7 @@ Responsividade Index
     }
 
     #IMCbtn:hover, #TMBbtn:hover {
-        font-size: 0.1em;
+        font-size: 0.5em;
     }
 
 
@@ -614,7 +655,7 @@ Responsividade Index
         z-index: 0;
         opacity: 30%;
     }
-    
+
     #sectionIndex {
         position: absolute;
         z-index: 3;
@@ -639,18 +680,18 @@ Responsividade Index
     }
 }
 
+
+/******************
+Responsividade TMB*/
+
 @media (max-width: 400px) {
-    .boxTMB {
-        margin-left:300px;
-        margin-top: 500px;
-    }
+
+   
 }
 
 @media (min-width:400px) and (max-width: 600px) {
-    .boxTMB {
-        margin-left:300px;
-        margin-top: 500px;
-    }
+   
+
 }
 
 
