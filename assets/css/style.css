@@ -712,18 +712,31 @@ Responsividade TMB*/
        margin-top: 15%;
        margin-left: 0;
        margin-right: 0;
-    }
-
-    select {
-        
-    }
-    
-
-    
+    } 
 }
 
 @media (min-width:400px) and (max-width: 600px) {
-   
+    .boxTMB {
+        width: 350px;
+    }
+
+    .boxTMB h1 {
+        font-size: 0.9em;
+    }
+
+    .inputKGTMB span {
+        margin-left: 54%;
+    }
+
+    .spanAnos {
+        margin-left: 48% !important;
+    }
+
+    .inputSexo input + label:before {
+       margin-top: 15%;
+       margin-left: 0;
+       margin-right: 0;
+    } 
 
 }
 
