@@ -383,8 +383,12 @@ Index */
     position: relative;
     height: auto;
     width: 100%;
-    opacity: 80%;
+    opacity: 50%;
     z-index: 0;
+}
+
+.fundo2, .fundo3 {
+    display: none;
 }
 
 #sectionIndex h1 {
@@ -620,6 +624,7 @@ Responsividade Index
         margin-right: 30%;
         width: 1200px;
         z-index: 0;
+        display: flex;
     }
 
     .fundo2 {
@@ -627,6 +632,7 @@ Responsividade Index
         position: absolute;
         opacity: 40%;
         z-index: 0;
+        display: flex;
     }
 
     #sectionIndex h1 {
@@ -646,7 +652,7 @@ Responsividade Index
 
 }
 
-@media (min-width:400px) {
+@media (min-width:400px) and (max-width: 900px) {
 
     .fundo2, .fundo3 {
         position: absolute;
@@ -654,6 +660,7 @@ Responsividade Index
         width: 100%;
         z-index: 0;
         opacity: 30%;
+        display: flex;
     }
 
     #sectionIndex {
@@ -685,8 +692,34 @@ Responsividade Index
 Responsividade TMB*/
 
 @media (max-width: 400px) {
+    .boxTMB {
+        width: 300px;
+    }
 
-   
+    .boxTMB h1 {
+        font-size: 0.9em;
+    }
+
+    .inputKGTMB span {
+        margin-left: 54%;
+    }
+
+    .spanAnos {
+        margin-left: 48% !important;
+    }
+
+    .inputSexo input + label:before {
+       margin-top: 15%;
+       margin-left: 0;
+       margin-right: 0;
+    }
+
+    select {
+        
+    }
+    
+
+    
 }
 
 @media (min-width:400px) and (max-width: 600px) {
