@@ -697,6 +697,11 @@ Responsividade Index
 Responsividade TMB*/
 
 @media (max-width: 400px) {
+
+    html, body {
+        overflow: hidden;
+    }
+
     .boxTMB {
         width: 300px;
     }
@@ -723,6 +728,11 @@ Responsividade TMB*/
 }
 
 @media (min-width:400px) and (max-width: 600px) {
+
+    html, body {
+        overflow: hidden;
+    }
+    
     .boxTMB {
         width: 350px;
     }
