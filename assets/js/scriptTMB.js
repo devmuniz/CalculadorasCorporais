@@ -1,3 +1,5 @@
+//CALCULO DA TAXA METABÓLICA E CALORIA GASTA DIARIAMENTE
+
 //TMB (homens) = 88,362 + (13,397 × peso em kg) + (4,799 × altura em cm) – (5,677 × idade em anos).
 //TMB (mulheres) = 447,593 + (9,247 × peso em kg) + (3,098 × altura em cm) – (4,330 × idade em anos).
 
@@ -12,85 +14,14 @@ Intensa: considera atividades como natação, corrida, andar de bicicleta ou dan
 trabalhador rural que trabalha com instrumentos manuais e caminham longas distâncias, 
 várias horas por dia; ou entregador de mercadorias pesadas - considerar 2,2 para o cálculo.*/
 
-verificarCampos()
-function calcularTmb() {
 
-    var peso = document.getElementById('pesoTMB').value
-    var altura = document.getElementById('alturaTMB').value
-    var idade = document.getElementById('idade').value
-    peso = parseInt(peso)
-    altura = parseInt(altura)
-    idade = parseInt(idade)
-    var resultado
-    var gasto
+let todosCamposPreenchidos;
 
-    const opcao = document.querySelector('input[name="sexo"]:checked')
-    const valor = opcao.value
-
-    const opcaoAtv = document.getElementById('frequencia').value
-
-    if (valor === 'homem') {
-    resultado = 88.362 + (13.397 * peso) + (4.799 * altura) - (5.677 * idade)
-    
-    resultado = resultado.toFixed(2)
-    } else {
-    resultado = 447.593 + (9.247 * peso) + (3.098 * altura) - (4.330 * idade)
-    
-    resultado = resultado.toFixed(2)
-    
-    }
-    
-
-    if (opcaoAtv === 'leve') {
-        gasto = resultado * 1.55
-        gasto = gasto.toFixed(2)
-        
-    } if (opcaoAtv === 'moderada') {
-        gasto = resultado * 1.84
-        gasto = gasto.toFixed(2)
-        
-    } if (opcaoAtv === 'intensa'){
-        gasto = resultado * 2.2
-        gasto = gasto.toFixed(2)
-        
-    }
-
-    localStorage.setItem('resultado', resultado);
-    localStorage.setItem('gasto', gasto);
-    window.location.href = 'tmbResultado.html'
-
-}
-
-
-
-function verificarCampos() {
-    const peso = document.getElementById('pesoTMB').value.trim()
-    const altura = document.getElementById('alturaTMB').value.trim()
-    const idade = document.getElementById('idade').value.trim()
-    const opcao = document.querySelector('input[name="sexo"]:checked')
-    const valor = opcao ? opcao.value : ''
-
-    const btnCalcTMB = document.getElementById('btnCalcTMB')
-
-    if (peso === '' || altura === '' || idade === '' || valor === '') {
-        btnCalcTMB.disabled = true
-    } else {
-        btnCalcTMB.disabled = false
-    }
-}
-
-document.getElementById('pesoTMB').addEventListener('input', verificarCampos)
-document.getElementById('alturaTMB').addEventListener('input', verificarCampos)
-document.getElementById('idade').addEventListener('input', verificarCampos)
-document.querySelectorAll('input[name="sexo"]').forEach(el => {
-    el.addEventListener('change', verificarCampos)
-});
-
-
+//Quando clicar Enter, se todos campos tiverem preenchidos, executa, se não, não faz nada
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
-        const btnCalcTMB = document.getElementById('btnCalcTMB')
-        if (btnCalcTMB.disabled === true) {
+        todosCamposPreenchidos = verificarCampos();
+        if (!todosCamposPreenchidos) {
             event.preventDefault()
         } else {
             calcularTmb()
@@ -98,3 +29,83 @@ document.addEventListener('keydown', (event) => {
         }
     }
 });
+
+
+
+
+//Função para verificar o preenchimento dos campos
+function verificarCampos() {
+    const PESO_CAMPO = document.getElementById('pesoTMB')
+    const ALTURA_CAMPO = document.getElementById('alturaTMB')
+    const IDADE_CAMPO = document.getElementById('idade')
+    const CAMPO_SEXO = document.querySelectorAll('input[name="sexo"]');
+    let sexoSelecionado = document.querySelector('input[name="sexo"]:checked');
+    let campos = [PESO_CAMPO, ALTURA_CAMPO, IDADE_CAMPO];
+
+    //Pra cada campo vazio, deixa a borda vermelha
+    campos.forEach(campo => {
+        if(!campo.value) {
+            campo.style.border = "1px solid red"
+            return false;
+        } else {
+            campo.style.border = ""
+        }
+    });
+    
+    //Valida o campo de sexo separado
+    //Caso nao tenha campo selecionado, adiciona erro no CSS, para ficar vermelho
+    if (!sexoSelecionado) {
+        CAMPO_SEXO.forEach(radio => radio.classList.add('erro'));
+        return false
+    } else {
+        CAMPO_SEXO.forEach(radio => radio.classList.remove('erro'));
+    }
+
+    return true
+
+}
+
+//Função para calcular a taxa metabólica
+function calcularTmb() {
+    let sexoSelecionado = document.querySelector('input[name="sexo"]:checked');
+    let opcaoAtv = document.getElementById('frequencia').value
+    let peso = parseInt(document.getElementById('pesoTMB').value);
+    let altura = parseInt(document.getElementById('alturaTMB').value);
+    let idade = parseInt(document.getElementById('idade').value);
+    let resultado;
+    let gasto;
+    
+    //Se tiver algum campo vazio, retorna
+    todosCamposPreenchidos = verificarCampos()
+    if(!todosCamposPreenchidos) return; 
+
+    //Faz o calculo de acordo com o sexo selecionado
+    if (sexoSelecionado.value === 'homem') {
+        resultado = 88.362 + (13.397 * peso) + (4.799 * altura) - (5.677 * idade)
+        resultado = resultado.toFixed(2)
+    } else {
+        resultado = 447.593 + (9.247 * peso) + (3.098 * altura) - (4.330 * idade)
+        resultado = resultado.toFixed(2)
+    }
+    
+    //Define o gasto calórico de acordo com a frequencia de atividade fisica realizada
+    if (opcaoAtv === 'leve') {
+        gasto = resultado * 1.55
+        gasto = gasto.toFixed(2)
+        
+    } else if (opcaoAtv === 'moderada') {
+        gasto = resultado * 1.84
+        gasto = gasto.toFixed(2)
+        
+    } else if (opcaoAtv === 'intensa'){
+        gasto = resultado * 2.2
+        gasto = gasto.toFixed(2)
+    }
+
+    //Atribui os campos da página do resultado
+    localStorage.setItem('resultado', resultado);
+    localStorage.setItem('gasto', gasto);
+    //Redireciona para a página do resultado
+    window.location.href = 'tmbResultado.html'
+}
+
