@@ -14,6 +14,15 @@ Intensa: considera atividades como natação, corrida, andar de bicicleta ou dan
 trabalhador rural que trabalha com instrumentos manuais e caminham longas distâncias, 
 várias horas por dia; ou entregador de mercadorias pesadas - considerar 2,2 para o cálculo.*/
 
+document.addEventListener('touchstart', function(event) {
+    if (event.touches.length > 1) {
+        event.preventDefault();
+    }
+}, { passive: false });
+
+document.addEventListener('touchmove', function(event) {
+    event.preventDefault();
+}, { passive: false });
 
 let todosCamposPreenchidos;
 
